@@ -1,0 +1,251 @@
+@import "tailwindcss";
+@plugin "tailwindcss-animate";
+@plugin "@tailwindcss/typography";
+
+@theme {
+  --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+  --font-serif: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
+
+  --color-border: hsl(var(--border));
+  --color-input: hsl(var(--input));
+  --color-ring: hsl(var(--ring));
+  --color-background: hsl(var(--background));
+  --color-foreground: hsl(var(--foreground));
+
+  --color-primary: hsl(var(--primary));
+  --color-primary-foreground: hsl(var(--primary-foreground));
+  --color-secondary: hsl(var(--secondary));
+  --color-secondary-foreground: hsl(var(--secondary-foreground));
+  --color-destructive: hsl(var(--destructive));
+  --color-destructive-foreground: hsl(var(--destructive-foreground));
+  --color-muted: hsl(var(--muted));
+  --color-muted-foreground: hsl(var(--muted-foreground));
+  --color-accent: hsl(var(--accent));
+  --color-accent-foreground: hsl(var(--accent-foreground));
+  --color-popover: hsl(var(--popover));
+  --color-popover-foreground: hsl(var(--popover-foreground));
+  --color-card: hsl(var(--card));
+  --color-card-foreground: hsl(var(--card-foreground));
+
+  --color-gold: hsl(var(--gold));
+  --color-gold-light: hsl(var(--gold-light));
+  --color-gold-dark: hsl(var(--gold-dark));
+  --color-navy: hsl(var(--navy));
+  --color-navy-light: hsl(var(--navy-light));
+  --color-navy-muted: hsl(var(--navy-muted));
+  --color-rose: hsl(var(--rose));
+  --color-blush: hsl(var(--blush));
+  --color-cream: hsl(var(--cream));
+
+  --color-sidebar: hsl(var(--sidebar-background));
+  --color-sidebar-foreground: hsl(var(--sidebar-foreground));
+  --color-sidebar-primary: hsl(var(--sidebar-primary));
+  --color-sidebar-primary-foreground: hsl(var(--sidebar-primary-foreground));
+  --color-sidebar-accent: hsl(var(--sidebar-accent));
+  --color-sidebar-accent-foreground: hsl(var(--sidebar-accent-foreground));
+  --color-sidebar-border: hsl(var(--sidebar-border));
+  --color-sidebar-ring: hsl(var(--sidebar-ring));
+
+  --radius-lg: var(--radius);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-sm: calc(var(--radius) - 4px);
+
+  --shadow-soft: var(--shadow-soft);
+  --shadow-medium: var(--shadow-medium);
+  --shadow-gold: var(--shadow-gold);
+
+  --background-image-gradient-hero: var(--gradient-hero);
+  --background-image-gradient-gold: var(--gradient-gold);
+  --background-image-gradient-cream: var(--gradient-cream);
+  --background-image-gradient-overlay: var(--gradient-overlay);
+}
+
+
+@layer base {
+  :root {
+    /* Gulf EPCO Design System - Refined Manufacturing + Beauty */
+    
+    /* Primary: Deep Midnight Navy - Trust, Professionalism */
+    --primary: 220 40% 13%;
+    --primary-foreground: 45 30% 96%;
+    
+    /* Background: Soft Ivory/Cream - Elegance, Warmth */
+    --background: 40 30% 98%;
+    --foreground: 220 30% 15%;
+    
+    /* Card: Pure White with warmth */
+    --card: 40 20% 99%;
+    --card-foreground: 220 30% 15%;
+    
+    /* Popover */
+    --popover: 40 20% 99%;
+    --popover-foreground: 220 30% 15%;
+    
+    /* Secondary: Warm Champagne/Gold - Luxury, Beauty */
+    --secondary: 38 45% 90%;
+    --secondary-foreground: 220 30% 15%;
+    
+    /* Muted: Soft warm gray */
+    --muted: 40 15% 94%;
+    --muted-foreground: 220 15% 45%;
+    
+    /* Accent: Rose Gold - Beauty touch */
+    --accent: 15 35% 92%;
+    --accent-foreground: 220 30% 15%;
+    
+    /* Gold highlight */
+    --gold: 38 60% 55%;
+    --gold-light: 38 50% 75%;
+    --gold-dark: 38 65% 40%;
+    
+    /* Navy variations */
+    --navy: 220 40% 13%;
+    --navy-light: 220 30% 25%;
+    --navy-muted: 220 20% 35%;
+    
+    /* Beauty accent colors */
+    --rose: 350 35% 85%;
+    --blush: 15 40% 90%;
+    --cream: 40 35% 95%;
+    
+    /* Destructive */
+    --destructive: 0 65% 50%;
+    --destructive-foreground: 0 0% 100%;
+    
+    /* Border & Input */
+    --border: 40 20% 88%;
+    --input: 40 20% 88%;
+    --ring: 38 60% 55%;
+    
+    --radius: 0.5rem;
+    
+    /* Sidebar */
+    --sidebar-background: 40 30% 98%;
+    --sidebar-foreground: 220 30% 15%;
+    --sidebar-primary: 220 40% 13%;
+    --sidebar-primary-foreground: 45 30% 96%;
+    --sidebar-accent: 38 45% 90%;
+    --sidebar-accent-foreground: 220 30% 15%;
+    --sidebar-border: 40 20% 88%;
+    --sidebar-ring: 38 60% 55%;
+    
+    /* Gradients */
+    --gradient-hero: linear-gradient(135deg, hsl(220 40% 13%) 0%, hsl(220 30% 22%) 100%);
+    --gradient-gold: linear-gradient(135deg, hsl(38 60% 55%) 0%, hsl(38 50% 65%) 100%);
+    --gradient-cream: linear-gradient(180deg, hsl(40 30% 98%) 0%, hsl(40 25% 95%) 100%);
+    --gradient-overlay: linear-gradient(180deg, hsla(220 40% 13% / 0.7) 0%, hsla(220 40% 13% / 0.4) 100%);
+    
+    /* Shadows */
+    --shadow-soft: 0 4px 20px -4px hsla(220 40% 13% / 0.08);
+    --shadow-medium: 0 8px 30px -8px hsla(220 40% 13% / 0.12);
+    --shadow-gold: 0 4px 20px -4px hsla(38 60% 55% / 0.25);
+  }
+
+  .dark {
+    --primary: 45 30% 96%;
+    --primary-foreground: 220 40% 13%;
+    
+    --background: 220 35% 8%;
+    --foreground: 40 20% 95%;
+    
+    --card: 220 30% 12%;
+    --card-foreground: 40 20% 95%;
+    
+    --popover: 220 30% 12%;
+    --popover-foreground: 40 20% 95%;
+    
+    --secondary: 220 25% 18%;
+    --secondary-foreground: 40 20% 95%;
+    
+    --muted: 220 25% 18%;
+    --muted-foreground: 220 15% 60%;
+    
+    --accent: 220 25% 18%;
+    --accent-foreground: 40 20% 95%;
+    
+    --destructive: 0 60% 45%;
+    --destructive-foreground: 0 0% 100%;
+    
+    --border: 220 25% 20%;
+    --input: 220 25% 20%;
+    --ring: 38 60% 55%;
+    
+    --sidebar-background: 220 35% 8%;
+    --sidebar-foreground: 40 20% 95%;
+    --sidebar-primary: 38 60% 55%;
+    --sidebar-primary-foreground: 220 40% 13%;
+    --sidebar-accent: 220 25% 18%;
+    --sidebar-accent-foreground: 40 20% 95%;
+    --sidebar-border: 220 25% 20%;
+    --sidebar-ring: 38 60% 55%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif;
+  }
+}
+
+@layer components {
+  .container-wide {
+    @apply w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8;
+  }
+
+  .section-padding {
+    @apply py-16 md:py-24 lg:py-32;
+  }
+
+  .text-gradient-gold {
+    @apply bg-clip-text text-transparent;
+    background-image: var(--gradient-gold);
+  }
+
+  .bg-gradient-hero {
+    background: var(--gradient-hero);
+  }
+
+  .bg-gradient-cream {
+    background: var(--gradient-cream);
+  }
+
+  .line-clamp-2 {
+    display: -webkit-box;
+    -webkit-line-clamp: 2;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+
+  .line-clamp-3 {
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+  }
+}
+
+@layer utilities {
+  .animation-delay-150 {
+    animation-delay: 150ms;
+  }
+
+  .animation-delay-300 {
+    animation-delay: 300ms;
+  }
+
+  .animation-delay-500 {
+    animation-delay: 500ms;
+  }
+}
