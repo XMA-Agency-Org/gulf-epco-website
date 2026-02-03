@@ -4,7 +4,7 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import { ArrowRight, Award, Globe, Shield } from "lucide-react";
 import { Button } from "@/components/ui/button";
-const heroVideo = "https://res.cloudinary.com/dnoehundr/video/upload/v1767148993/hero_aszyib.mp4";
+const heroVideo = "https://res.cloudinary.com/dw1j7izud/video/upload/q_auto:good,f_auto,vc_auto,c_scale,br_2000k/v1770119092/xvnkufavk13b6icx77y4.mp4";
 
 export function Hero() {
   return (

@@ -12,7 +12,7 @@ export const brandsData = [
       "Skin barrier support",
       "Targeted treatment solutions",
     ],
-    image: "/model-pink-richie-cream-small.webp",
+    image: "/assets/brands/richie.webp",
     color: "from-amber-100 to-amber-200",
   },
   {
@@ -23,7 +23,7 @@ export const brandsData = [
     description:
       "NovoCare is a Dubai-based personal care brand created to deliver safe, effective, and affordable solutions for everyday families.",
     products: ["NovoBaby", "NovoSkin", "NovoHair"],
-    image: "/assets/brands/novocare.jpg",
+    image: "/assets/brands/novocare.webp",
     color: "from-sky-100 to-blue-100",
   },
   {
@@ -39,7 +39,7 @@ export const brandsData = [
       "Hair strength and resilience",
       "Ongoing care and maintenance",
     ],
-    image: "/assets/brands/so20-haircare.jpg",
+    image: "/assets/brands/so20.webp",
     color: "from-zinc-800 to-zinc-900",
   },
   {
@@ -55,7 +55,7 @@ export const brandsData = [
       "Care routines focused on hair strength and vitality",
       "Ongoing maintenance through regular use",
     ],
-    image: "/assets/brands/granhair.jpg",
+    image: "/assets/brands/granhair.webp",
     color: "from-amber-900 to-stone-900",
   },
   {
@@ -70,7 +70,7 @@ export const brandsData = [
       "Skin comfort and freshness",
       "Routine-friendly use for all household members",
     ],
-    image: "/assets/brands/fiora.jpg",
+    image: "/assets/brands/fiora.webp",
     color: "from-green-50 to-emerald-100",
   },
   {
@@ -86,7 +86,7 @@ export const brandsData = [
       "Ongoing nourishment and hydration",
       "Simple, repeatable haircare routines",
     ],
-    image: "/assets/brands/aroma.jpg",
+    image: "/assets/brands/aroma.webp",
     color: "from-amber-100 to-orange-100",
   },
 ] as const;
