@@ -13,7 +13,7 @@ export const brandsData = [
       "Targeted treatment solutions",
     ],
     image: "/assets/brands/richie.webp",
-    color: "from-amber-100 to-amber-200",
+    color: "from-[#00153A] to-[#00153A]",
   },
   {
     name: "NovoCare",
@@ -43,19 +43,19 @@ export const brandsData = [
     color: "from-zinc-800 to-zinc-900",
   },
   {
-    name: "Granhair",
-    slug: "granhair",
-    category: "Men's Grooming",
-    tagline: "Targeted Haircare, Built Around Real Needs",
+    name: "Orga +",
+    slug: "orga-plus",
+    category: "Hair Care",
+    tagline: "Targeted Haircare, Structured Around Everyday Needs",
     description:
-      "GranHair is a haircare brand developed to address specific hair and scalp concerns through focused, function-driven formulations.",
+      "Orga+ is a haircare brand developed around specific hair concerns and ingredient-led solutions, offering structured shampoo and conditioner systems for different hair types and routines.",
     products: [
-      "Targeted cleansing solutions",
-      "Support for scalp comfort and balance",
-      "Care routines focused on hair strength and vitality",
-      "Ongoing maintenance through regular use",
+      "Scalp comfort and freshness",
+      "Hydration for dry or damaged hair",
+      "Improved softness and manageability",
+      "Ongoing nourishment through consistent care",
     ],
-    image: "/assets/brands/granhair.webp",
+    image: "/assets/brands/orga-plus.webp",
     color: "from-amber-900 to-stone-900",
   },
   {
@@ -76,7 +76,7 @@ export const brandsData = [
   {
     name: "Aroma",
     slug: "aroma",
-    category: "Home Fragrance",
+    category: "Haircare",
     tagline: "Everyday Argan Haircare, Made Simple",
     description:
       "Aroma is a haircare brand built around argan-based formulations, developed to support everyday hair nourishment, softness, and manageability.",

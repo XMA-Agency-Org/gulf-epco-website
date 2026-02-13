@@ -2,7 +2,7 @@
 
 import { motion } from "framer-motion";
 import Link from "next/link";
-import { ArrowRight, ArrowLeft, Check, FlaskConical, Factory } from "lucide-react";
+import { ArrowRight, ArrowLeft, Check, FlaskConical, Factory, ExternalLink } from "lucide-react";
 import { Layout } from "@/components/layout/Layout";
 import { Button } from "@/components/ui/button";
 import { brandsData, type Brand } from "@/lib/brands-data";
@@ -14,7 +14,7 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
   const isRichie = brand.slug === "richie-skincare";
   const isNovoCare = brand.slug === "novocare";
   const isSo20 = brand.slug === "so20-haircare";
-  const isGranHair = brand.slug === "granhair";
+  const isOrgaPlus = brand.slug === "orga-plus";
   const isFiora = brand.slug === "fiora";
   const isAroma = brand.slug === "aroma";
   const fallbackProducts = brand.products;
@@ -23,8 +23,14 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
     <Layout>
       {/* Hero */}
       <section className="relative pt-8 pb-16 md:pt-12 md:pb-20 overflow-hidden">
-        <div className={`absolute inset-0 bg-gradient-to-br ${brand.color}`} />
-        <div className="absolute inset-0 bg-primary/60" />
+        {isAroma ? (
+          <div className="absolute inset-0" style={{ backgroundColor: "#2F1404" }} />
+        ) : (
+          <>
+            <div className={`absolute inset-0 bg-gradient-to-br ${brand.color}`} />
+            <div className="absolute inset-0 bg-primary/60" />
+          </>
+        )}
         <div className="container-wide relative z-10">
           <Link
             href="/brands"
@@ -66,11 +72,13 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
                   to haircare, balancing visible results with formulations suitable for regular use.
                 </p>
               ) : null}
-              {isGranHair ? (
+              {isOrgaPlus ? (
                 <p className="text-primary-foreground/80 leading-relaxed mb-8">
-                  Developed and manufactured by Gulf EPCO, the brand is designed for consumers
-                  seeking practical solutions that support hair strength, scalp comfort, and
-                  overall hair condition through consistent care.
+                  Manufactured by Gulf EPCO, the brand focuses on practical, routine-friendly
+                  formulations designed to support hair comfort, hydration, and manageability.
+                  Each Orga+ system is built around a clear functional goal, making it easy for
+                  consumers to choose products that match their hair needs without overcomplicating
+                  their routine.
                 </p>
               ) : null}
               {isFiora ? (
@@ -87,12 +95,30 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
                   providing essential haircare products that fit naturally into daily routines.
                 </p>
               ) : null}
-              <Button variant="cta" asChild>
-                <Link href="/contact">
-                  Create a Similar Product
-                  <ArrowRight className="w-4 h-4" />
-                </Link>
-              </Button>
+              <div className="flex flex-wrap gap-4">
+                <Button variant="cta" asChild>
+                  <Link href="/contact">
+                    Create a Similar Product
+                    <ArrowRight className="w-4 h-4" />
+                  </Link>
+                </Button>
+                {isRichie ? (
+                  <Button variant="hero-outline" asChild>
+                    <a href="https://richiestores.com/" target="_blank" rel="noopener noreferrer">
+                      Visit Website
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                ) : null}
+                {isNovoCare ? (
+                  <Button variant="hero-outline" asChild>
+                    <a href="https://novocare.me/" target="_blank" rel="noopener noreferrer">
+                      Visit Website
+                      <ExternalLink className="w-4 h-4" />
+                    </a>
+                  </Button>
+                ) : null}
+              </div>
             </motion.div>
 
             <motion.div
@@ -656,7 +682,7 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
             </div>
           </section>
         </>
-      ) : isGranHair ? (
+      ) : isOrgaPlus ? (
         <>
           {/* Story */}
           <section className="section-padding bg-background">
@@ -668,23 +694,22 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
                   viewport={{ once: true }}
                 >
                   <span className="text-gold text-sm font-medium uppercase tracking-wider mb-4 block">
-                    The Story Behind GranHair
+                    The Story Behind Orga+
                   </span>
                   <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
-                    Care Built Around Real Concerns
+                    Simplified Haircare, Targeted Results
                   </h2>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
                     <p>
-                      GranHair was created to move beyond one-size-fits-all haircare. The brand is
-                      built on the understanding that different hair concerns require targeted
-                      approaches, not generic solutions.
+                      Orga+ was created to simplify haircare by pairing targeted formulations
+                      with recognizable ingredients. Instead of broad, one-size-fits-all products,
+                      the brand organizes its ranges around specific hair concerns—such as scalp
+                      comfort, hydration, or nourishment.
                     </p>
                     <p>
-                      By structuring the range around clearly defined care needs, GranHair allows
-                      consumers to choose products that align with their specific hair goals -
-                      whether maintaining scalp balance, supporting stronger hair, or improving
-                      overall hair health. The focus remains on reliability, routine, and long-term
-                      care rather than short-term cosmetic results.
+                      By offering clearly defined shampoo-and-conditioner pairs, Orga+ helps
+                      consumers build effective routines without confusion, supporting consistent
+                      results through regular use.
                     </p>
                   </div>
                 </motion.div>
@@ -701,11 +726,11 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
                       Brand Focus
                     </span>
                     <p className="text-foreground font-medium mb-4">
-                      Targeted care for hair strength, scalp comfort, and routine reliability.
+                      Concern-based haircare with structured shampoo and conditioner systems.
                     </p>
                     <p className="text-sm text-muted-foreground leading-relaxed">
-                      GranHair focuses on concern-based routines that support long-term hair and
-                      scalp health through consistent, practical care.
+                      Orga+ pairs targeted formulations with recognizable ingredients, helping
+                      consumers build effective routines for their specific hair needs.
                     </p>
                   </motion.div>
                 </div>
@@ -713,7 +738,7 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
             </div>
           </section>
 
-          {/* Structured System */}
+          {/* Concern-Based System */}
           <section className="section-padding bg-cream">
             <div className="container-wide">
               <motion.div
@@ -723,16 +748,16 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
                 className="max-w-3xl mx-auto text-center mb-12"
               >
                 <span className="text-gold text-sm font-medium uppercase tracking-wider mb-4 block">
-                  A Structured, Concern-Focused Haircare System
+                  A Concern-Based Haircare System
                 </span>
                 <h2 className="font-serif text-3xl md:text-4xl text-foreground mb-6">
-                  A Routine That Responds to Specific Needs
+                  Dedicated Pairs for Every Need
                 </h2>
                 <p className="text-muted-foreground leading-relaxed">
-                  GranHair is developed as a concern-based haircare system, where each product is
-                  designed to support a particular aspect of hair or scalp health. This structure
-                  helps consumers build routines that respond directly to their individual hair
-                  needs.
+                  Orga+ is structured around dedicated shampoo and conditioner pairs, each
+                  designed to address a particular hair or scalp need. This system-based approach
+                  ensures that cleansing and conditioning steps work together as part of a
+                  cohesive routine.
                 </p>
               </motion.div>
 
@@ -776,11 +801,13 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
                     </span>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
-                    GranHair formulations are developed with a focus on functional, care-oriented
-                    ingredients commonly used in targeted haircare. The formulation philosophy
-                    prioritizes balance - supporting effectiveness while maintaining suitability
-                    for regular use. Each formulation is designed to work as part of a broader
-                    routine, reinforcing consistent results through continued application.
+                    Orga+ formulations are built around recognizable, purpose-driven ingredients,
+                    with each system centered on a specific ingredient story aligned to its
+                    function. Across the range, the formulation approach emphasizes balanced
+                    moisture and nourishment, gentle routine-friendly cleansing, scalp comfort
+                    and hair manageability, and ingredients commonly associated with hydration,
+                    softness, or revitalization. The goal is to create practical, effective
+                    haircare products that fit naturally into everyday routines.
                   </p>
                 </motion.div>
 
@@ -801,11 +828,11 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
                     </span>
                   </div>
                   <p className="text-muted-foreground leading-relaxed">
-                    GranHair is developed and manufactured at Gulf EPCO&apos;s facility in Dubai
+                    Orga+ is developed and manufactured at Gulf EPCO&apos;s facility in Dubai
                     Industrial City, following structured production processes and quality-focused
-                    manufacturing practices. The brand demonstrates Gulf EPCO&apos;s ability to
-                    manufacture targeted, concern-led haircare ranges with formulation precision
-                    and scalable, consistent production.
+                    manufacturing practices. The brand reflects Gulf EPCO&apos;s manufacturing
+                    capability in multi-system, concern-based haircare ranges, combining
+                    ingredient-led concepts with consistent, scalable production.
                   </p>
                 </motion.div>
               </div>
@@ -823,12 +850,12 @@ export function BrandDetailClient({ brand }: { brand: Brand }) {
               >
                 <div className="border border-border rounded-2xl p-8 md:p-10">
                   <span className="block text-4xl text-gold/60 font-serif leading-none mb-4">
-                    “
+                    &ldquo;
                   </span>
                   <blockquote className="text-lg md:text-xl text-foreground leading-relaxed">
-                    GranHair reflects a focused approach to haircare manufacturing - designed
-                    around specific needs, supported by structured formulation, and built for
-                    everyday routines.
+                    Orga+ represents a practical, system-driven approach to haircare
+                    manufacturing—focused on targeted routines, familiar ingredients, and
+                    everyday usability.
                   </blockquote>
                 </div>
               </motion.div>

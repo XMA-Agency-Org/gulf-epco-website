@@ -19,7 +19,7 @@ const navigation = {
   brands: [
     { name: "SO20 Haircare", href: "/brands/so20-haircare" },
     { name: "Richie Skincare", href: "/brands/richie-skincare" },
-    { name: "GranHair", href: "/brands/granhair" },
+    { name: "Orga +", href: "/brands/orga-plus" },
     { name: "NovoCare", href: "/brands/novocare" },
     { name: "Aroma", href: "/brands/aroma" },
     { name: "Fiora Shower Gel", href: "/brands/fiora" },
